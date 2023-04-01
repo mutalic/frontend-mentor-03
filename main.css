@@ -91,6 +91,11 @@ main {
     color: var(--neutral-grey-100);
 }
 
+.rating-btn:hover, .rating-btn:focus {
+    background-color: var(--primary-orange);
+    color: var(--neutral-white);
+}
+
 .radio-btn {
     /* Hides radio buttons from user but leave accessible for screen readers. */
     position: absolute;
@@ -110,4 +115,9 @@ main {
     letter-spacing: 1px;
 
     margin-top: 1.5rem;
+}
+
+.submit-btn:hover, .submit-btn:focus {
+    background-color: var(--neutral-white);
+    color: var(--primary-orange);
 }
