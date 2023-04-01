@@ -1,0 +1,113 @@
+/* Custom Reset */
+
+html {
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+    font-size: 15px;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+}
+
+/* Custom Variables */
+    /* Color Theme #1 */
+    :root {
+        --primary-orange: hsl(25, 97%, 53%);
+        --neutral-white: hsl(0, 0%, 100%);
+        --neutral-grey-100: hsl(217, 12%, 63%);
+        --neutral-grey-300: hsl(216, 12%, 54%);
+        --neutral-grey-500: hsla(210, 11%, 25%, 0.861);
+        --neutral-blue-700: hsl(213, 19%, 18%);
+        --neutral-blue-800: hsl(212, 22%, 15%);
+        --neutral-blue-900: hsl(216, 12%, 8%);
+    }
+
+/* Font Classes */
+.text--primary {
+    color: var(--neutral-white);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.text--secondary {
+    color: var(--neutral-grey-100);
+}
+
+/* Specific Styling */
+main {
+    background-color: var(--neutral-blue-900);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    /* center card */
+    margin: 0 auto;
+
+    /* responsive width and height */
+    width: 80%;
+    max-width: 25rem;
+    min-height: 22rem;
+
+    /* card design */
+    border-radius: 25px;
+    background: linear-gradient(var(--neutral-blue-700), var(--neutral-blue-800));
+    padding: 1.5rem;
+    box-shadow: 0px 5px 15px rgb(12, 12, 21);
+}
+
+.card--thank-you {
+    display: none;
+}
+
+.mini-circle {
+    /* circle design */
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--neutral-grey-500);
+
+    /* center star */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-btn-container {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0.5rem 0;
+}
+
+.rating-btn {
+    color: var(--neutral-grey-100);
+}
+
+.radio-btn {
+    /* Hides radio buttons from user but leave accessible for screen readers. */
+    position: absolute;
+    opacity: 0;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 20px;
+
+    background-color: var(--primary-orange);
+    color: var(--neutral-white);
+
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    margin-top: 1.5rem;
+}

@@ -5,9 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
 
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Title -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./main.css">
 </head>
 <body>
+  <main>
+
+    <!-- Component: How Did We Do? -->
+    <section class="card card--rating">
+
+      <!-- Star Icon -->
+      <div class="mini-circle">
+        <svg width="17" height="16" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="m9.067.43 1.99 4.031c.112.228.33.386.58.422l4.45.647a.772.772 0 0 1 .427 1.316l-3.22 3.138a.773.773 0 0 0-.222.683l.76 4.431a.772.772 0 0 1-1.12.813l-3.98-2.092a.773.773 0 0 0-.718 0l-3.98 2.092a.772.772 0 0 1-1.119-.813l.76-4.431a.77.77 0 0 0-.222-.683L.233 6.846A.772.772 0 0 1 .661 5.53l4.449-.647a.772.772 0 0 0 .58-.422L7.68.43a.774.774 0 0 1 1.387 0Z"
+            fill="#FC7614" />
+        </svg>
+      </div>
+
+      <!-- How did we do? -->
+      <h1 class="text--primary">How did we do?</h1>
+      <p class="text--secondary">Please let us know how we did with your support
+        request. All feedback is appreciated to help us
+        improve our offering!</p>
+
+      <form action="submit">
+        <div class="rating-btn-container">
+
+          <div class="rating-btn mini-circle">
+            <input class="radio-btn" type="radio" id="ratingChoice1" name="rating" value="1" />
+            <label for="ratingChoice1">1</label>
+          </div>
+
+          <div class="rating-btn mini-circle">
+            <input class="radio-btn" type="radio" id="ratingChoice2" name="rating" value="2" />
+            <label for="ratingChoice2">2</label>
+          </div>
+
+          <div class="rating-btn mini-circle">
+            <input class="radio-btn" type="radio" id="ratingChoice3" name="rating" value="3" />
+            <label for="ratingChoice3">3</label>
+          </div>
+
+          <div class="rating-btn mini-circle">
+            <input class="radio-btn" type="radio" id="ratingChoice4" name="rating" value="2" />
+            <label for="ratingChoice4">4</label>
+          </div>
+
+          <div class="rating-btn mini-circle">
+            <input class="radio-btn" type="radio" id="ratingChoice5" name="rating" value="3" />
+            <label for="ratingChoice5">5</label>
+          </div>
+        </div>
+
+        <button class="submit-btn" type="submit">SUBMIT</button>
+      </form>
+
+    </section>
+
+    <!-- Component: Thank You! -->
+    <section class="card card--thank-you">
+      <h1 class="text--primary">Thank you!</h1>
+      <p class="text--secondary">We appreciate you taking the time to give a
+        rating. If you ever need more support, don't
+        hesitate to get in touch!</p>
+    </section>
+  </main>
+
+  <script>
+
+  </script>
 </body>
 </html>

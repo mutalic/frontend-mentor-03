@@ -48,6 +48,10 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 
+#### 1. Create HTML architecture and CSS class names.
+#### 2. Create CSS Custom Variables for current Color Scheme.
+#### 3. 
+
 ### Built with
 
 - Semantic HTML5 markup
