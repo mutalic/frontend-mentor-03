@@ -91,6 +91,11 @@ main {
     color: var(--neutral-grey-100);
 }
 
+.rating-btn--clicked {
+    background-color: var(--neutral-grey-300);
+    color: var(--neutral-white);
+}
+
 .rating-btn:hover, .rating-btn:focus {
     background-color: var(--primary-orange);
     color: var(--neutral-white);

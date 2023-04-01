@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
 
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,12 +61,12 @@
           </div>
 
           <div class="rating-btn mini-circle">
-            <input class="radio-btn" type="radio" id="ratingChoice4" name="rating" value="2" />
+            <input class="radio-btn" type="radio" id="ratingChoice4" name="rating" value="4" />
             <label for="ratingChoice4">4</label>
           </div>
 
           <div class="rating-btn mini-circle">
-            <input class="radio-btn" type="radio" id="ratingChoice5" name="rating" value="3" />
+            <input class="radio-btn" type="radio" id="ratingChoice5" name="rating" value="5" />
             <label for="ratingChoice5">5</label>
           </div>
         </div>
@@ -82,7 +86,16 @@
   </main>
 
   <script>
-
+    /*
+    Rating Button Click Functionality
+      - If clicked, change color by adding class "rating-btn--clicked".
+    */
+    let ratingBtn = $('.rating-btn');
+    ratingBtn.on('click', function (e) {
+      console.log(e.target);
+      $('.rating-btn').removeClass('rating-btn--clicked');
+      e.currentTarget.classList.add('rating-btn--clicked');
+    })
   </script>
 </body>
 </html>
