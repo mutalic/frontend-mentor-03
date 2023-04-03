@@ -3,7 +3,6 @@ Rating Button Click Functionality
     - If clicked, change color by adding class "rating-btn--clicked".
     - Save rating value to session storage
 */
-
 localStorage.clear('ratingValue'); // clears previous ratingValue whenever refreshed
 let ratingValue;
 
@@ -20,17 +19,9 @@ ratingBtn.on('click', function (e) {
     ratingValue = $(this).data('value');
     }
 
+    /* Remove 'disabled' from #submit-btn */
+    document.getElementById('submit-btn').disabled = false;
+
     /* Save ratingValue to localStorage */
     localStorage.setItem('ratingValue', ratingValue);
-})
-
-/*
-Submit Button Functionality
-    - If ratingValue is empty, alert user.
-// */
-$('#submit-btn').on("click", function(e){
-    if (!ratingValue) {
-        e.preventDefault(); // stops page from refreshing/submitting
-        alert("Please select a rating.");
-    }
 })
