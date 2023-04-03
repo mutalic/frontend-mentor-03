@@ -1,3 +1,16 @@
+/* Custom Variables */
+    /* Color Theme #1 */
+    :root {
+        --primary-orange: hsl(25, 97%, 53%);
+        --neutral-white: hsl(0, 0%, 100%);
+        --neutral-grey-100: hsl(217, 12%, 63%);
+        --neutral-grey-300: hsl(216, 12%, 54%);
+        --neutral-grey-500: hsla(210, 11%, 25%, 0.861);
+        --neutral-blue-700: hsl(213, 19%, 18%);
+        --neutral-blue-800: hsl(212, 22%, 15%);
+        --neutral-blue-900: hsl(216, 12%, 8%);
+    }
+
 /* Custom Reset */
 
 html {
@@ -14,39 +27,24 @@ body {
     margin: 0;
 }
 
-/* Custom Variables */
-    /* Color Theme #1 */
-    :root {
-        --primary-orange: hsl(25, 97%, 53%);
-        --neutral-white: hsl(0, 0%, 100%);
-        --neutral-grey-100: hsl(217, 12%, 63%);
-        --neutral-grey-300: hsl(216, 12%, 54%);
-        --neutral-grey-500: hsla(210, 11%, 25%, 0.861);
-        --neutral-blue-700: hsl(213, 19%, 18%);
-        --neutral-blue-800: hsl(212, 22%, 15%);
-        --neutral-blue-900: hsl(216, 12%, 8%);
-    }
-
-/* Font Classes */
+/* Text Styling */
 .text--primary {
     color: var(--neutral-white);
     font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 
 .text--secondary {
     color: var(--neutral-grey-100);
 }
 
-/* Specific Styling */
-main {
-    background-color: var(--neutral-blue-900);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+.text--accent {
+    color: var(--primary-orange);
+    font-size: 1rem;
+    font-weight: lighter;
 }
 
+/* Reusable Styles */
 .card {
     /* center card */
     margin: 0 auto;
@@ -63,10 +61,6 @@ main {
     box-shadow: 0px 5px 15px rgb(12, 12, 21);
 }
 
-.card--thank-you {
-    display: none;
-}
-
 .mini-circle {
     /* circle design */
     width: 2.5rem;
@@ -78,13 +72,30 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /* margin */
+    margin-bottom: 2rem;
+}
+
+.card--rating {
+    /* display: none; */
+}
+.card--thank-you {
+    /* display: none; */
+    text-align: center;
+}
+
+/* Specific Styles */
+main {
+    background-color: var(--neutral-blue-900);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .rating-btn-container {
     display: flex;
     justify-content: space-between;
-
-    padding: 0.5rem 0;
 }
 
 .rating-btn {
@@ -96,15 +107,18 @@ main {
     color: var(--neutral-white);
 }
 
-.rating-btn:hover, .rating-btn:focus {
-    background-color: var(--primary-orange);
-    color: var(--neutral-white);
-}
-
 .radio-btn {
     /* Hides radio buttons from user but leave accessible for screen readers. */
     position: absolute;
     opacity: 0;
+}
+
+.rating-btn:hover, .rating-btn:focus,
+.radio-btn:hover, .radio-btn:focus,
+.radio-btn--label:hover, .radio-btn--label:focus {
+    background-color: var(--primary-orange);
+    color: var(--neutral-white);
+    cursor: pointer;
 }
 
 .submit-btn {
@@ -118,11 +132,30 @@ main {
 
     font-weight: 700;
     letter-spacing: 1px;
-
-    margin-top: 1.5rem;
 }
 
 .submit-btn:hover, .submit-btn:focus {
     background-color: var(--neutral-white);
     color: var(--primary-orange);
+    cursor: pointer;
+}
+
+/* Thank You Card */
+.img--thank-you {
+    text-align: center;
+    padding: 1rem;
+}
+
+.rating-result {
+    width: 80%;
+    max-width: 180px;
+    margin: 0.5rem auto 1.5rem;
+
+    padding: 0.3rem 0 0.2rem;
+    border-radius: 20px;
+    background-color: var(--neutral-grey-500);
+}
+
+.rating-result--text {
+    margin: 0;
 }
