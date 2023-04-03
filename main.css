@@ -77,11 +77,7 @@ body {
     margin-bottom: 2rem;
 }
 
-.card--rating {
-    /* display: none; */
-}
 .card--thank-you {
-    /* display: none; */
     text-align: center;
 }
 
@@ -140,7 +136,7 @@ main {
     cursor: pointer;
 }
 
-/* Thank You Card */
+/* Thank You Card in form-success.html */
 .img--thank-you {
     text-align: center;
     padding: 1rem;
