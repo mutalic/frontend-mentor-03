@@ -64,7 +64,7 @@
                 </svg>
             </div>
             <div class="rating-result">
-                <h2 class="text--accent rating-result--text">You selected <span id="rating-value">4</span> out of 5</h2>
+                <h2 class="text--accent rating-result--text">You selected <span id="rating-value"></span> out of 5</h2>
             </div>
             <h1 class="text--primary">Thank you!</h1>
             <p class="text--secondary">We appreciate you taking the time to give a
@@ -73,28 +73,15 @@
         </section>
     </main>
 
-    <script>
+    <script type="module">
         /*
-        Rating Button Click Functionality
-          - If clicked, change color by adding class "rating-btn--clicked".
+        Rating Value
+            1. Get ratingValue from localStorage.
+            2. Set that value to variable 'ratingValue'.
+            3. Set that value as innerHTML of #rating-value.
         */
-        let ratingBtn = $('.rating-btn');
-        ratingBtn.on('click', function (e) {
-            console.log(e.target);
-            $('.rating-btn').removeClass('rating-btn--clicked');
-            e.currentTarget.classList.add('rating-btn--clicked');
-        })
-
-        /*
-        Submit button Click Functionality
-          - When rating is submitted,
-            - 1. .card--rating display: none;
-            - 2. .card--thank-you display: block;
-            - 3. insert value of selected rating into #rating-value.
-        */
-        function submitRating(e) {
-            e.preventDefault(); // stop from page refreshing
-        }
+        let ratingValue = localStorage.getItem('ratingValue');
+        $('#rating-value').html(ratingValue);
     </script>
 </body>
 </html>
