@@ -53,7 +53,7 @@ Users should be able to:
 
 ### What I learned
 #### 1. Making the rating choices more semantic and accessible.
-For the rating choices (1-5), I used <form>, <input type="radio">, and <label> for accessiblity and semantics, and <div> for styling purposes instead of simply using <div> tags.
+For the rating choices (1-5), I used form, input type="radio", and label for accessiblity and semantics, and div for styling purposes instead of simply using div tags.
 Therefore, I had to figure out a way to cover the default radio buttons in order to implement the desired design. I learned that using "display: none" will make it inaccessible for screen readers, and I didn't want to use "visibility: hidden;" since it would allocated space on the page for the radio buttons. This is why I used the solution below to acheive the desired outcome (hidden from view, but accessible for screen readers):
   ```CSS
   .radio-btn {
@@ -66,7 +66,7 @@ Therefore, I had to figure out a way to cover the default radio buttons in order
 #### 2. Implement functionality/interactivity for the rating buttons.
 The rating choices consisted of several sub-elements, which lead to a couple difficulties:
   * Problem #1: Implementing event listeners for click events.
-    - I had to consider cases where the user clicked <input class="radio-btn"> or <label class="radio-btn--label">, and <div class="rating-btn">, and extract values depending on the element clicked. I used the HTML data- attribute to make the values accessible for the cases in which the user clicks <div class="rating-btn">.
+    - I had to consider cases where the user clicked input.radio-btn or label.radio-btn--label, and div.rating-btn, and extract values depending on the element clicked. I used the HTML data- attribute to make the values accessible for the cases in which the user clicks div.rating-btn.
 
   * Solution #1:
     ```HTML
@@ -85,7 +85,7 @@ The rating choices consisted of several sub-elements, which lead to a couple dif
     ```
 
   * Problem #2: Changing the selected rating button's color when clicked.
-    - The 'click' event listener is attached to <div class="rating-btn">, and whenever either the <div>, <input>, or <label> is clicked, event bubbling occurs, so using 'e.currentTarget' (the element that the event listener is attached to; in this case <div class="rating-btn">) to attach the CSS class 'rating-btn--clicked' will apply the desired design no matter which sub-element the user clicks to select rating.
+    - The 'click' event listener is attached to div.rating-btn, and whenever either the di, input, or label is clicked, event bubbling occurs, so using 'e.currentTarget' (the element that the event listener is attached to; in this case div.rating-btn) to attach the CSS class 'rating-btn--clicked' will apply the desired design no matter which sub-element the user clicks to select rating.
 
   * Solution #2:
   ```HTML
@@ -100,11 +100,11 @@ The rating choices consisted of several sub-elements, which lead to a couple dif
     /* Styling */
     $('.rating-btn').removeClass('rating-btn--clicked');
     e.currentTarget.classList.add('rating-btn--clicked');
-  }
+  })
   ```
 
 #### 3. Switching pages from index.html to success.html when rating is submitted.
-I used <form action="./success.html"> to send user to the "Thank You" page once rating was selected and submitted. Due to the lack of a server to store user data, I used localStorage to store the user's choice when a rating is selected and to retrieve that data for the "Thank You" page. This way, the data is dynamically bound to <span id="rating-value">.
+I learned how to use the form tag's action attribute to send the user to the "Thank You" page once rating was selected and submitted. Due to the lack of a server to store user data, I used localStorage to store the user's choice when a rating is selected and to retrieve that data for the "Thank You" page. This way, the data is dynamically bound to span#rating-value of success.html.
 ```HTML
 <div class="rating-result">
     <h2 class="text--accent rating-result--text">You selected <span id="rating-value"></span> out of 5</h2>
