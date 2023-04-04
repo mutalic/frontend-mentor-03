@@ -3,7 +3,7 @@ Rating Button Click Functionality
     - If clicked, change color by adding class "rating-btn--clicked".
     - Save rating value to session storage
 */
-localStorage.clear('ratingValue'); // clears previous ratingValue whenever refreshed
+localStorage.clear('ratingValue'); // clears previous ratingValue whenever page is refreshed
 let ratingValue;
 
 let ratingBtn = $('.rating-btn');
