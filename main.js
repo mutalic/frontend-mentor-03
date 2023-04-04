@@ -22,6 +22,10 @@ ratingBtn.on('click', function (e) {
     /* Remove 'disabled' from #submit-btn */
     document.getElementById('submit-btn').disabled = false;
 
+    /* Remove #notify-user */
+    $('#notify-user').css('display', 'none');
+
     /* Save ratingValue to localStorage */
     localStorage.setItem('ratingValue', ratingValue);
 })
+
